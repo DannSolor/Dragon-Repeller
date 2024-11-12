@@ -73,11 +73,12 @@ DragonRepeller/
 ├── README.md          # This README file
 └── LICENSE            # License information (if applicable)
 
+
 Installation
 
     Clone the repository:
 
-git clone https://github.com/your-username/dragon-repeller.git
+git clone https://github.com/DannSolor/Dragon-Repeller.git
 
 Open the project:
 
