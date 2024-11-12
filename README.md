@@ -63,33 +63,35 @@ How to Play
 
 File Structure
 
-DragonRepeller/
-│
-├── index.html         # The HTML file for game structure
-├── style.css          # The CSS file for styling the game
-├── script.js          # The JavaScript file for game logic
-├── assets/            # Folder for images and icons (if applicable)
-│   └── monster-icons/ # Icons for monsters (optional)
-├── README.md          # This README file
-└── LICENSE            # License information (if applicable)
+    DragonRepeller/
+    │
+    ├── index.html         # The HTML file for game structure
+    ├── style.css          # The CSS file for styling the game
+    ├── script.js          # The JavaScript file for game logic
+    ├── assets/            # Folder for images and icons (if applicable)
+    │   └── monster-icons/ # Icons for monsters (optional)
+    ├── README.md          # This README file
+    └── LICENSE            # License information (if applicable)
 
 
 Installation
+Clone the repository:
 
-    Clone the repository:
-
-git clone https://github.com/DannSolor/Dragon-Repeller.git
+    git clone https://github.com/DannSolor/Dragon-Repeller.git
 
 Open the project:
-
     Navigate to the project folder and open the index.html file in your browser.
+
+
 
     cd dragon-repeller
     open index.html
 
-    Play the Game:
-        Enjoy playing the game directly in your web browser. There is no need for additional installations.
 
+ Play the Game:
+        Enjoy playing the game directly in your web browser. There is no need for additional installations.
+        
+        
 Gameplay Walkthrough
 
     You Start in the Town Square:
