@@ -1,0 +1,52 @@
+/* Body styling */
+body {
+  background-color: #0a0a23; /* Dark background color for a nighttime theme */
+}
+
+/* Main game text area */
+#text {
+  background-color: #0a0a23; /* Matches body background for continuity */
+  color: #ffffff; /* White text for high contrast */
+  padding: 10px; /* Adds space inside the text container */
+}
+
+/* Game container styling */
+#game {
+  max-width: 500px; /* Limits width for a compact, centered layout */
+  max-height: 400px; /* Controls overall height of the game container */
+  background-color: #ffffff; /* White background for the main game area */
+  color: #ffffff; /* Text color set to white */
+  margin: 30px auto 0px; /* Centers the game on the page */
+  padding: 10px; /* Padding around the game content */
+}
+
+/* Styling for controls and stats sections */
+#controls,
+#stats {
+  border: 1px solid #0a0a23; /* Border for visual separation */
+  padding: 5px; /* Inner padding for spacing */
+  color: #0a0a23; /* Dark text color for contrast against the background */
+}
+
+/* Monster stats section */
+#monsterStats {
+  display: none; /* Hidden by default, shown only when a monster appears */
+  border: 1px solid #0a0a23; /* Border for emphasis */
+  padding: 5px; /* Inner padding */
+  color: #ffffff; /* White text color */
+  background-color: #c70d0d; /* Red background to signify danger */
+}
+
+/* Stat text styling */
+.stat {
+  padding-right: 10px; /* Adds space between stat elements */
+}
+
+/* Button styling */
+button {
+  cursor: pointer; /* Shows a pointer cursor on hover */
+  color: #0a0a23; /* Dark text for contrast on button */
+  background-color: #feac32; /* Primary button background color */
+  background-image: linear-gradient(#fecc4c, #ffac33); /* Gradient for visual depth */
+  border: 3px solid #feac32; /* Thick border to make buttons stand out */
+}
