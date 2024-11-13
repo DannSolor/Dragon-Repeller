@@ -157,6 +157,52 @@ function goFight() {
   monsterName.innerText = monsters[fighting].name;
   monsterHealthText.innerText = monsterHealth;
 }
+function attack() {
+  // Display the monster's attack message.
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  
+  // Add the player's attack message with their current weapon.
+  text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
+  
+  // Deduct health based on the monster's attack value.
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  
+  // Check if the player successfully hits the monster.
+  if (isMonsterHit()) {
+    // If the player hits, deduct health from the monster based on the weapon's power and a random XP modifier.
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
+  } else {
+    // If the player misses, display a message.
+    text.innerText += " You miss.";
+  }
+  
+  // Update the health and monster's health on the screen.
+  healthText.innerText = health;
+  monsterHealthText.innerText = monsterHealth;
+  
+  // If the player's health reaches 0, trigger the loss condition.
+  if (health <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    // If the monster's health reaches 0, check if the player is fighting the dragon (fighting === 2).
+    // If so, trigger the win condition. Otherwise, defeat the monster.
+    if (fighting === 2) {
+      winGame();
+    } else {
+      defeatMonster();
+    }
+  }
+  
+  // If there's a 10% chance, and the player has more than 1 item in their inventory,
+  // remove the last item (weapon) from the inventory and display it as broken.
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    
+    // Decrement the weapon index as the player's weapon is broken.
+    currentWeaponIndex--;
+  }
+}
+
 
 // Calculate monster attack strength based on level
 function getMonsterAttackValue(level) {
