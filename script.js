@@ -59,7 +59,7 @@ const locations = [
   { // Victory state after defeating a monster
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, goTown],
+    "button functions": [goTown, goTown, easterEgg],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   { // Lose state if player dies
@@ -243,4 +243,52 @@ function restart() {
   healthText.innerText = health;
   xpText.innerText = xp;
   goTown();
+}
+// Activates an Easter egg by updating the game location to a special hidden location.
+function easterEgg() {
+  update(locations[7]); // Assumes locations[7] is a special Easter egg location
+}
+
+// Calls the pick function with a guess of 2
+function pickTwo() {
+  pick(2);
+}
+
+// Calls the pick function with a guess of 8
+function pickEight() {
+  pick(8);
+}
+
+// Main function for guessing a number in a randomly generated set
+function pick(guess) {
+  const numbers = []; // Initialize an empty array to hold random numbers
+
+  // Fill the array with 10 random numbers between 0 and 10
+  while (numbers.length < 10) {
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+
+  // Display the player's guess and the generated random numbers
+  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n"; // Append each random number to the displayed text
+  }
+
+  // Check if the player's guess is in the list of random numbers
+  if (numbers.includes(guess)) {
+    // If the guess is correct, reward player with 20 gold and update display
+    text.innerText += "Right! You win 20 gold!";
+    gold += 20;
+    goldText.innerText = gold;
+  } else {
+    // If the guess is incorrect, deduct 10 health points and update display
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+
+    // If health drops to 0 or below, call the lose function to end the game
+    if (health <= 0) {
+      lose();
+    }
+  }
 }
